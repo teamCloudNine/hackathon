@@ -9,6 +9,7 @@ import com.hackathon.springboard.beneficiarycollaborationservice.services.Benefi
 import com.hackathon.springboard.openapi.api.BeneficiariesApi;
 import com.hackathon.springboard.openapi.model.Beneficiary;
 import com.hackathon.springboard.openapi.model.BeneficiaryCreationRequest;
+import com.hackathon.springboard.openapi.model.CreateBeneficiaryOutcomeRequest;
 import com.hackathon.springboard.openapi.model.Outcome;
 
 import lombok.AllArgsConstructor;
@@ -35,7 +36,7 @@ public class BeneficiariesController implements BeneficiariesApi {
   }
   
 @Override
- public ResponseEntity<Beneficiary> createBeneficiaryOutcome(String id, Outcome outcome){
+ public ResponseEntity<Beneficiary> createBeneficiaryOutcome(String id, CreateBeneficiaryOutcomeRequest outcome){
     return ResponseEntity.ok(beneficiaryService.createBeneficiaryOutcome(id, outcome));
  }
   

@@ -5,7 +5,7 @@ import java.time.OffsetDateTime;
 import java.util.List;
 
 import com.hackathon.springboard.beneficiarycollaborationservice.constants.EntityConstants;
-import com.hackathon.springboard.openapi.model.Outcome;
+import com.hackathon.springboard.openapi.model.OutcomeEvent;
 
 import lombok.Data;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
@@ -25,7 +25,9 @@ public class BeneficiaryEntity {
   private String phoneNumber;
   private BigDecimal cabinNumber;
   private List<Integer> needs;
-  private List<Outcome> outcomes;
+  private OutcomeEvent outcome;
+  private String outcomeComment;
+  private OffsetDateTime outcomeDate;
   private String comments;
 
   @DynamoDbPartitionKey
