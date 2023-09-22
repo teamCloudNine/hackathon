@@ -1,5 +1,5 @@
 {
-    "beneficiary-collaboration-table-dp": [
+    "beneficiary-collaboration-table": [
       {
         "PutRequest": {
           "Item": {
@@ -34,7 +34,8 @@
             "phoneNumber": {"S": "(555) 987-6543"},
             "cabinNumber": {"N": "17"},
             "needs": {"L": [
-              {"S": "need-1a2b3c4d-5e6f-7g8h-9i10-jk11lm12no13"}
+                {"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"},
+                {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"}
             ]},
             "comments": {"S": "Beneficiary is allergic to peanuts."},
             "startDate": {"S": "2021-07-01T00:00:00Z"}
@@ -53,9 +54,9 @@
             "phoneNumber": {"S": "(555) 555-5555"},
             "cabinNumber": {"N": "73"},
             "needs": {"L": [
-              {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"}
+                {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"}
             ]},
-            "outcome": {"S": "Found Housing"},
+            "outcome": {"S": "GED"},
             "outcomeComment": {"S": "Beneficiary found a great apartment."},
             "outcomeDate": {"S": "2021-08-15T00:00:00Z"},
             "comments": {"S": "Beneficiary has a service dog."},
@@ -76,9 +77,11 @@
             "phoneNumber": {"S": "(555) 555-1234"},
             "cabinNumber": {"N": "12"},
             "needs": {"L": [
-              {"S": "need-0c8f6d7b-273b-4713-b0eb-99a5f0bfa8ae"}
+                {"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"},
+                {"S": "need-0c8f6d7b-273b-4713-b0eb-99a5f0bfa8ae"},
+                {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"}
             ]},
-            "outcome": {"S": "Found Education"},
+            "outcome": {"S": "GED"},
             "outcomeComment": {"S": "Beneficiary was accepted into a great program."},
             "outcomeDate": {"S": "2021-08-01T00:00:00Z"},
             "comments": {"S": "Beneficiary is a vegetarian."},
@@ -101,11 +104,95 @@
               {"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"},
               {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"}
             ]},
-            "outcome": {"S": "Found Employment"},
+            "outcome": {"S": "GED"},
             "outcomeComment": {"S": "Beneficiary got a job at a local restaurant."},
             "outcomeDate": {"S": "2021-08-01T00:00:00Z"},
             "comments": {"S": "Beneficiary is a smoker."},
             "startDate": {"S": "2021-07-01T00:00:00Z"}
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "entityType": {"S": "Beneficiary"},
+            "entityId": {"S": "beneficiary-a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6"},
+            "firstName": {"S": "Jasmine"},
+            "lastName": {"S": "Gonzalez"},
+            "dateOfBirth": {"S": "1998-03-12T00:00:00Z"},
+            "identity": {"S": "F"},
+            "phoneNumber": {"S": "(555) 555-6789"},
+            "cabinNumber": {"N": "23"},
+            "needs": {"L": [
+                {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"}
+            ]},
+            "comments": {"S": "Beneficiary is allergic to shellfish."},
+            "startDate": {"S": "2021-07-01T00:00:00Z"},
+            "endDate": {"S": "2021-08-31T00:00:00Z"}
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "entityType": {"S": "Beneficiary"},
+            "entityId": {"S": "beneficiary-b2c3d4e5-f6g7-h8i9-j0k1-l2m3n4o5p6q"},
+            "firstName": {"S": "Samantha"},
+            "lastName": {"S": "Nguyen"},
+            "dateOfBirth": {"S": "1993-09-25T00:00:00Z"},
+            "identity": {"S": "F"},
+            "phoneNumber": {"S": "(555) 123-4567"},
+            "cabinNumber": {"N": "37"},
+            "needs": {"L": [
+                {"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"}
+            ]},
+            "comments": {"S": "Beneficiary is lactose intolerant."},
+            "startDate": {"S": "2021-07-01T00:00:00Z"},
+            "endDate": {"S": "2021-08-31T00:00:00Z"}
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "entityType": {"S": "Beneficiary"},
+            "entityId": {"S": "beneficiary-c3d4e5f6-g7h8-i9j0-k1l2-m3n4o5p6q7"},
+            "firstName": {"S": "Mohammed"},
+            "lastName": {"S": "Patel"},
+            "dateOfBirth": {"S": "1980-12-01T00:00:00Z"},
+            "identity": {"S": "M"},
+            "phoneNumber": {"S": "(555) 555-1234"},
+            "cabinNumber": {"N": "19"},
+            "needs": {"L": [
+                {"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"},
+                {"S": "need-0c8f6d7b-273b-4713-b0eb-99a5f0bfa8ae"},
+                {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"}
+            ]},
+            "comments": {"S": "Beneficiary has a hearing impairment."},
+            "startDate": {"S": "2021-07-01T00:00:00Z"},
+            "endDate": {"S": "2021-08-31T00:00:00Z"}
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "entityType": {"S": "Beneficiary"},
+            "entityId": {"S": "beneficiary-d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8"},
+            "firstName": {"S": "Aisha"},
+            "lastName": {"S": "Khan"},
+            "dateOfBirth": {"S": "1996-07-08T00:00:00Z"},
+            "identity": {"S": "F"},
+            "phoneNumber": {"S": "(555) 123-4567"},
+            "cabinNumber": {"N": "27"},
+            "needs": {"L": [
+                {"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"},
+                {"S": "need-0c8f6d7b-273b-4713-b0eb-99a5f0bfa8ae"},
+                {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"}
+            ]},
+            "comments": {"S": "Beneficiary is allergic to cats."},
+            "startDate": {"S": "2021-07-01T00:00:00Z"},
+            "endDate": {"S": "2021-08-31T00:00:00Z"}
           }
         }
       }
