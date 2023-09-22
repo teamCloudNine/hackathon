@@ -11,12 +11,17 @@ import java.util.List;
 public class OrganizationsController implements OrganizationsApi {
 
   @Override
+  public ResponseEntity<Organization> createOrganization(Organization organization) {
+    return null;
+  }
+
+  @Override
   public ResponseEntity<Organization> findOrganization(Integer id) {
     return null;
   }
 
   @Override
-  public ResponseEntity<List<Organization>> listOrganizations() {
+  public ResponseEntity<List<Organization>> listOrganizations(Integer needId) {
     return null;
   }
 
