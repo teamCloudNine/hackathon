@@ -15,10 +15,8 @@ public interface BeneficiaryMapper {
 
   @Mapping(source = "id", target = "entityId")
   @Mapping(target = "entityType", constant = "Beneficiary")
-  @Mapping(source = "outcomes", target = "outcomes")
   BeneficiaryEntity beneficiaryToBeneficiaryEntity(Beneficiary beneficiary);
 
   Beneficiary beneficiaryCreationRequestToBeneficiary(BeneficiaryCreationRequest beneficiaryCreationRequest);
-
 
 }
