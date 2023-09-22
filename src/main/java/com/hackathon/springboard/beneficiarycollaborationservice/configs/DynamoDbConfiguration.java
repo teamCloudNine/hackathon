@@ -8,8 +8,6 @@ import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 
-import java.net.URI;
-
 @Configuration
 @AllArgsConstructor
 public class DynamoDbConfiguration {
@@ -17,7 +15,7 @@ public class DynamoDbConfiguration {
   private final DynamoDbProperties dynamoDbProperties;
 
   @Bean
-//  @Profile("!local")
+  @Profile("!local")
   protected DynamoDbEnhancedClient dynamoDbEnhancedClient() {
     return DynamoDbEnhancedClient.builder()
         .dynamoDbClient(
@@ -36,7 +34,6 @@ public class DynamoDbConfiguration {
                                      DynamoDbClient.builder()
                                                    .region(dynamoDbProperties.getRegion())
                                                    .credentialsProvider(ProfileCredentialsProvider.create())
-                                                   .endpointOverride(URI.create(dynamoDbProperties.getEndpoint()))
                                                    .build()
                                  )
                                  .build();
