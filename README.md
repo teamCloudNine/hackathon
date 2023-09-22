@@ -13,6 +13,13 @@ This allows us to optimize our persistence layer.
 We define the PK to be the name of our object, i.e. Beneficiary then we have a sort key that would be the unique identifier of the object,
 then we will have a `EntityData` attribute that will provide dynamic data (this will depend on the object it is associated with).
 
+
+#### Post call to create a Need
+![Swagger Need Post Call](./screenshots/Swagger-Need-Post.png)
+
+#### Resulting DynamoDb record
+![Swagger Need Post Call](./screenshots/SingleDynamoDbTable.png)
+
 ### Local Development
 
 If you want to setup your table, we recommend downloading the docker container for local DynamoDb. This will allow
