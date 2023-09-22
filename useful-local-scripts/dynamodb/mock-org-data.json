@@ -1,0 +1,199 @@
+{
+    "beneficiary-collaboration-table": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "entityType": {"S": "Organization"},
+                    "entityId": {"S": "Organization-4f6a3d5c-8f7e-4b2a-9d3c-6d8d4e2c1f1a"},
+                    "name": {"S": "FSCAA Inc."},
+                    "streetAddress": {"S": "456 Oak St."},
+                    "state": {"S": "CA"},
+                    "zipcode": {"S": "12345"},
+                    "phoneNumber": {"S": "555-1234"},
+                    "description": {"S": "Wrap-around case management, connects individuals to resources and organizations that can help them, including helping them apply for government assistance programs."},
+                    "needs": {"L": [{"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"}]}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "entityType": {"S": "Organization"},
+                    "entityId": {"S": "Organization-5f6a3d5c-8f7e-4b2a-9d3c-6d8d4e2c1f1a"},
+                    "name": {"S": "La Red Health Center"},
+                    "streetAddress": {"S": "789 Elm St."},
+                    "state": {"S": "CA"},
+                    "zipcode": {"S": "23456"},
+                    "phoneNumber": {"S": "555-5678"},
+                    "description": {"S": "Medical, dental, and mental health counseling."},
+                    "needs": {"L": [{"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"}, {"S": "need-6d4fc8bf-5fbf-4c7e-b503-8b8603657e99"}]}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "entityType": {"S": "Organization"},
+                    "entityId": {"S": "Organization-6f6a3d5c-8f7e-4b2a-9d3c-6d8d4e2c1f1a"},
+                    "name": {"S": "Marigold"},
+                    "streetAddress": {"S": "1010 Maple St."},
+                    "state": {"S": "CA"},
+                    "zipcode": {"S": "34567"},
+                    "phoneNumber": {"S": "555-9012"},
+                    "description": {"S": "Online anonymous peer support, connecting them with peers who have gone through or are going through similar struggles so they know they are not alone and can receive judgement-free support."},
+                    "needs": {"L": [{"S": "need-6d4fc8bf-5fbf-4c7e-b503-8b8603657e99"}]}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "entityType": {"S": "Organization"},
+                    "entityId": {"S": "Organization-7f6a3d5c-8f7e-4b2a-9d3c-6d8d4e2c1f1a"},
+                    "name": {"S": "NET Centers"},
+                    "streetAddress": {"S": "1212 Pine St."},
+                    "state": {"S": "CA"},
+                    "zipcode": {"S": "45678"},
+                    "phoneNumber": {"S": "555-3456"},
+                    "description": {"S": "Medicaid (free insurance), Food Stamps (government program that allows people to buy free/reduced cost food at grocery stores), and free phones."},
+                    "needs": {"L": [{"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"}, {"S": "need-0c8f6d7b-273b-4713-b0eb-99a5f0bfa8ae"}, {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"}]}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "entityType": {"S": "Organization"},
+                    "entityId": {"S": "Organization-8f6a3d5c-8f7e-4b2a-9d3c-6d8d4e2c1f1a"},
+                    "name": {"S": "Brandywine Valley SPCA"},
+                    "streetAddress": {"S": "1414 Cedar St."},
+                    "state": {"S": "CA"},
+                    "zipcode": {"S": "56789"},
+                    "phoneNumber": {"S": "555-6789"},
+                    "description": {"S": "Veterinary care."},
+                    "needs": {"L": [{"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"}, {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"}]}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "entityType": {"S": "Organization"},
+                    "entityId": {"S": "Organization-9f6a3d5c-8f7e-4b2a-9d3c-6d8d4e2c1f1a"},
+                    "name": {"S": "Bone and Yarn"},
+                    "streetAddress": {"S": "1616 Oak St."},
+                    "state": {"S": "CA"},
+                    "zipcode": {"S": "67890"},
+                    "phoneNumber": {"S": "555-7890"},
+                    "description": {"S": "Pet food."},
+                    "needs": {"L": [{"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"}, {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"}]}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "entityType": {"S": "Organization"},
+                    "entityId": {"S": "Organization-0f6a3d5c-8f7e-4b2a-9d3c-6d8d4e2c1f1a"},
+                    "name": {"S": "Del-One Credit Union"},
+                    "streetAddress": {"S": "2020 Maple St."},
+                    "state": {"S": "CA"},
+                    "zipcode": {"S": "78901"},
+                    "phoneNumber": {"S": "555-2345"},
+                    "description": {"S": "Savings accounts, credit counseling services."},
+                    "needs": {"L": [{"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"}]}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "entityType": {"S": "Organization"},
+                    "entityId": {"S": "Organization-1f6a3d5c-8f7e-4b2a-9d3c-6d8d4e2c1f1a"},
+                    "name": {"S": "Joyfully Connected Foundation"},
+                    "streetAddress": {"S": "2323 Pine St."},
+                    "state": {"S": "CA"},
+                    "zipcode": {"S": "89012"},
+                    "phoneNumber": {"S": "555-4567"},
+                    "description": {"S": "Helps people who have been isolated connect with others, make friends and find social support."},
+                    "needs": {"L": [{"S": "need-0c8f6d7b-273b-4713-b0eb-99a5f0bfa8ae"}]}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "entityType": {"S": "Organization"},
+                    "entityId": {"S": "Organization-2f6a3d5c-8f7e-4b2a-9d3c-6d8d4e2c1f1a"},
+                    "name": {"S": "The DSAMH Bridge Clinic"},
+                    "streetAddress": {"S": "2626 Cedar St."},
+                    "state": {"S": "CA"},
+                    "zipcode": {"S": "90123"},
+                    "phoneNumber": {"S": "555-5678"},
+                    "description": {"S": "Substance abuse and mental health clinic."},
+                    "needs": {"L": [{"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"}, {"S": "need-6d4fc8bf-5fbf-4c7e-b503-8b8603657e99"}]}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "entityType": {"S": "Organization"},
+                    "entityId": {"S": "Organization-3f6a3d5c-8f7e-4b2a-9d3c-6d8d4e2c1f1a"},
+                    "name": {"S": "PROMISE"},
+                    "streetAddress": {"S": "3030 Oak St."},
+                    "state": {"S": "CA"},
+                    "zipcode": {"S": "23456"},
+                    "phoneNumber": {"S": "555-7890"},
+                    "description": {"S": "Mental health services."},
+                    "needs": {"L": [{"S": "need-6d4fc8bf-5fbf-4c7e-b503-8b8603657e99"}]}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "entityType": {"S": "Organization"},
+                    "entityId": {"S": "Organization-4f6a3d5c-8f7e-4b2a-9d3c-6d8d4e2c1f1b"},
+                    "name": {"S": "ACT Team"},
+                    "streetAddress": {"S": "3434 Pine St."},
+                    "state": {"S": "CA"},
+                    "zipcode": {"S": "34567"},
+                    "phoneNumber": {"S": "555-9012"},
+                    "description": {"S": "Holistic recovery services (physical health, substance abuse, mental health, etc.)."},
+                    "needs": {"L": [{"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"}, {"S": "need-0c8f6d7b-273b-4713-b0eb-99a5f0bfa8ae"}, {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"}, {"S": "need-6d4fc8bf-5fbf-4c7e-b503-8b8603657e99"}]}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "entityType": {"S": "Organization"},
+                    "entityId": {"S": "Organization-5f6a3d5c-8f7e-4b2a-9d3c-6d8d4e2c1f1b"},
+                    "name": {"S": "Brandywine Counseling and Community Services"},
+                    "streetAddress": {"S": "4040 Maple St."},
+                    "state": {"S": "CA"},
+                    "zipcode": {"S": "45678"},
+                    "phoneNumber": {"S": "555-2345"},
+                    "description": {"S": "Addiction treatment programs."},
+                    "needs": {"L": [{"S": "need-0c8f6d7b-273b-4713-b0eb-99a5f0bfa8ae"}, {"S": "need-6d4fc8bf-5fbf-4c7e-b503-8b8603657e99"}]}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "entityType": {"S": "Organization"},
+                    "entityId": {"S": "Organization-6f6a3d5c-8f7e-4b2a-9d3c-6d8d4e2c1f1b"},
+                    "name": {"S": "Georgetown Police"},
+                    "streetAddress": {"S": "5050 Oak St."},
+                    "state": {"S": "CA"},
+                    "zipcode": {"S": "56789"},
+                    "phoneNumber": {"S": "555-3456"},
+                    "description": {"S": "Police department."},
+                    "needs": {"L": [{"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"}, {"S": "need-0c8f6d7b-273b-4713-b0eb-99a5f0bfa8ae"}, {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"}]}
+                }
+            }
+        }
+    ]
+}
