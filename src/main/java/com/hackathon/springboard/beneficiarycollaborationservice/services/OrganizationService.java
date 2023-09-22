@@ -51,11 +51,15 @@ public class OrganizationService {
               .build());
       listOfExpressions.add(Expression
                                 .builder()
-                                .expression("needId = " + needKey)
+                                .expression("contains(needs, " + needKey + ")")
                                 .build());
     }
 
     String expressionStatement = "";
+
+    if (listOfExpressions.isEmpty()) {
+      expressionStatement = expression.expression();
+    }
 
     for (Expression ex : listOfExpressions) {
       expressionStatement = Expression
