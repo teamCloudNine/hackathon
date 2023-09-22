@@ -1,6 +1,7 @@
 package com.hackathon.springboard.beneficiarycollaborationservice.dao;
 
 import com.hackathon.springboard.beneficiarycollaborationservice.configs.DynamoDbProperties;
+import com.hackathon.springboard.beneficiarycollaborationservice.constants.EntityConstants;
 import com.hackathon.springboard.beneficiarycollaborationservice.dao.models.ActivityEntity;
 import org.springframework.stereotype.Component;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient;
@@ -32,7 +33,7 @@ public class ActivityDao implements DynamoDbDao<ActivityEntity> {
   @Override
   public ActivityEntity retrieve(String id) {
     return activityEntityDynamoDbTable.getItem(Key.builder()
-                                                  .partitionValue("Activity")
+                                                  .partitionValue(EntityConstants.ACTIVITY_ENTITY_TYPE)
                                                   .sortValue(id)
                                                   .build());
   }
@@ -50,7 +51,7 @@ public class ActivityDao implements DynamoDbDao<ActivityEntity> {
   @Override
   public void delete(String id) {
     activityEntityDynamoDbTable.deleteItem(Key.builder()
-                                              .partitionValue("Activity")
+                                              .partitionValue(EntityConstants.ACTIVITY_ENTITY_TYPE)
                                               .sortValue(id)
                                               .build());
   }

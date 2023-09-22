@@ -1,15 +1,14 @@
 package com.hackathon.springboard.beneficiarycollaborationservice.dao.models;
 
-import java.time.OffsetDateTime;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
+import com.hackathon.springboard.beneficiarycollaborationservice.constants.EntityConstants;
 import com.hackathon.springboard.openapi.model.ActivityStatus;
-
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbSortKey;
+
+import java.time.OffsetDateTime;
 
 @Data
 @DynamoDbBean
@@ -36,7 +35,7 @@ public class ActivityEntity {
 
   @DynamoDbPartitionKey
   public String getEntityType() {
-    return "Activity";
+    return EntityConstants.ACTIVITY_ENTITY_TYPE;
   }
 
   public void setEntityType(String entityType) {

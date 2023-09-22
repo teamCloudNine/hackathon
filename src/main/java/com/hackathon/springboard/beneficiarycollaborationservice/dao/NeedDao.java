@@ -1,6 +1,7 @@
 package com.hackathon.springboard.beneficiarycollaborationservice.dao;
 
 import com.hackathon.springboard.beneficiarycollaborationservice.configs.DynamoDbProperties;
+import com.hackathon.springboard.beneficiarycollaborationservice.constants.EntityConstants;
 import com.hackathon.springboard.beneficiarycollaborationservice.dao.models.NeedEntity;
 import org.springframework.stereotype.Component;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient;
@@ -32,7 +33,7 @@ public class NeedDao implements DynamoDbDao<NeedEntity> {
   @Override
   public NeedEntity retrieve(String id) {
     return needEntityDynamoDbTable.getItem(Key.builder()
-                                              .partitionValue("Need")
+                                              .partitionValue(EntityConstants.NEED_ENTITY_TYPE)
                                               .sortValue(id)
                                               .build());
   }
@@ -50,7 +51,7 @@ public class NeedDao implements DynamoDbDao<NeedEntity> {
   @Override
   public void delete(String id) {
     needEntityDynamoDbTable.deleteItem(Key.builder()
-                                          .partitionValue("Need")
+                                          .partitionValue(EntityConstants.NEED_ENTITY_TYPE)
                                           .sortValue(id)
                                           .build());
   }

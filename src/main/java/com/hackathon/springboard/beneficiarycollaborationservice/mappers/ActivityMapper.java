@@ -1,11 +1,10 @@
 package com.hackathon.springboard.beneficiarycollaborationservice.mappers;
 
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-
 import com.hackathon.springboard.beneficiarycollaborationservice.dao.models.ActivityEntity;
 import com.hackathon.springboard.openapi.model.Activity;
 import com.hackathon.springboard.openapi.model.ActivityCreationRequest;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface ActivityMapper {
