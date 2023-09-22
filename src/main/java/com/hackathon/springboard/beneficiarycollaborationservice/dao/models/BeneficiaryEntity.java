@@ -1,14 +1,16 @@
 package com.hackathon.springboard.beneficiarycollaborationservice.dao.models;
 
+import java.math.BigDecimal;
+import java.time.OffsetDateTime;
+import java.util.List;
+
 import com.hackathon.springboard.beneficiarycollaborationservice.constants.EntityConstants;
+import com.hackathon.springboard.openapi.model.OutcomeEvent;
+
 import lombok.Data;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbSortKey;
-
-import java.math.BigDecimal;
-import java.time.OffsetDateTime;
-import java.util.List;
 
 @DynamoDbBean
 @Data
@@ -23,7 +25,12 @@ public class BeneficiaryEntity {
   private String phoneNumber;
   private BigDecimal cabinNumber;
   private List<Integer> needs;
+  private OutcomeEvent outcome;
+  private String outcomeComment;
+  private OffsetDateTime outcomeDate;
   private String comments;
+  private OffsetDateTime startDate;
+  private OffsetDateTime endDate;
 
   @DynamoDbPartitionKey
   public String getEntityType() {
