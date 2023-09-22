@@ -75,11 +75,12 @@ openApiGenerate {
 	invokerPackage = "com.hackathon.springboard.openapi".toString()
 	ignoreFileOverride = "$rootDir/.openapi-generator-ignore".toString()
 	generateApiDocumentation = true
+	generateApiTests = false
 	configOptions = [
 	        dateLibrary: 'java8',
-			interfaceOnly: 'true',
-			skipDefaultInterface: 'true',
+			groupId: "${group}.openapi",
 			additionalModelTypeAnnotations: "@lombok.Data();@lombok.NoArgsConstructor();@lombok.AllArgsConstructor();@lombok.Builder()",
+			documentationProvider: 'springdoc',
 			useSwaggerUI: 'true'
 	]
 }
