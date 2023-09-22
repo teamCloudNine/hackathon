@@ -1,0 +1,48 @@
+{
+  "beneficiary-collaboration-table": [
+    {
+      "PutRequest": {
+        "Item": {
+          "entityType": {"S": "Need"},
+          "entityId": {"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"},
+          "name": {"S": "Food"},
+          "description": {"S": "Need for food assistance"},
+          "alternativeName": {"S": "Nutrition Support"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "entityType": {"S": "Need"},
+          "entityId": {"S": "need-0c8f6d7b-273b-4713-b0eb-99a5f0bfa8ae"},
+          "name": {"S": "Shelter"},
+          "description": {"S": "Need for temporary shelter"},
+          "alternativeName": {"S": "Housing"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "entityType": {"S": "Need"},
+          "entityId": {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"},
+          "name": {"S": "Clothing"},
+          "description": {"S": "Need for warm clothing"},
+          "alternativeName": {"S": "Apparel"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "entityType": {"S": "Need"},
+          "entityId": {"S": "need-6d4fc8bf-5fbf-4c7e-b503-8b8603657e99"},
+          "name": {"S": "Hygiene Products"},
+          "description": {"S": "Need for personal hygiene items"},
+          "alternativeName": {"S": "Toiletries"}
+        }
+      }
+    }
+  ]
+}
