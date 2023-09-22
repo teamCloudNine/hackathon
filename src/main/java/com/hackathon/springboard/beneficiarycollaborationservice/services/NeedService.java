@@ -1,5 +1,6 @@
 package com.hackathon.springboard.beneficiarycollaborationservice.services;
 
+import com.hackathon.springboard.beneficiarycollaborationservice.constants.EntityConstants;
 import com.hackathon.springboard.beneficiarycollaborationservice.dao.NeedDao;
 import com.hackathon.springboard.beneficiarycollaborationservice.mappers.NeedMapper;
 import com.hackathon.springboard.openapi.model.Need;
@@ -31,7 +32,7 @@ public class NeedService {
     expressionValues
         .put(":val", AttributeValue
             .builder()
-            .s("Need")
+            .s(EntityConstants.NEED_ENTITY_TYPE)
             .build());
 
     return needDao

@@ -326,6 +326,14 @@ components:
           type: array
           items:
             type: integer
+        outcome:
+          $ref: '#/components/schemas/Outcome'
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
         comments:
           type: string
     Beneficiaries:
@@ -457,3 +465,11 @@ components:
     ActivityStatus:
       type: string
       enum: [IN_PROGRESS, COMPLETED]
+    Outcome:
+      type: object
+      properties:
+        eventName:
+          type: string
+        date:
+          type: string
+          format: date-time

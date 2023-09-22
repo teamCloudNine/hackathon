@@ -1,6 +1,7 @@
 package com.hackathon.springboard.beneficiarycollaborationservice.dao;
 
 import com.hackathon.springboard.beneficiarycollaborationservice.configs.DynamoDbProperties;
+import com.hackathon.springboard.beneficiarycollaborationservice.constants.EntityConstants;
 import com.hackathon.springboard.beneficiarycollaborationservice.dao.models.BeneficiaryEntity;
 import org.springframework.stereotype.Component;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient;
@@ -32,7 +33,7 @@ public class BeneficiaryDao implements DynamoDbDao<BeneficiaryEntity> {
   @Override
   public BeneficiaryEntity retrieve(String id) {
     return beneficiaryEntityDynamoDbTable.getItem(Key.builder()
-                                                     .partitionValue("Beneficiary")
+                                                     .partitionValue(EntityConstants.BENEFICIARY_ENTITY_TYPE)
                                                      .sortValue(id)
                                                      .build());
   }
@@ -50,7 +51,7 @@ public class BeneficiaryDao implements DynamoDbDao<BeneficiaryEntity> {
   @Override
   public void delete(String id) {
     beneficiaryEntityDynamoDbTable.deleteItem(Key.builder()
-                                                 .partitionValue("Beneficiary")
+                                                 .partitionValue(EntityConstants.BENEFICIARY_ENTITY_TYPE)
                                                  .sortValue(id)
                                                  .build());
   }

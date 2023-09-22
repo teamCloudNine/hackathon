@@ -1,5 +1,6 @@
 package com.hackathon.springboard.beneficiarycollaborationservice.dao.models;
 
+import com.hackathon.springboard.beneficiarycollaborationservice.constants.EntityConstants;
 import lombok.Data;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
@@ -23,7 +24,7 @@ public class OrganizationEntity {
 
   @DynamoDbPartitionKey
   public String getEntityType() {
-    return "Organization";
+    return EntityConstants.ORG_ENTITY_TYPE;
   }
 
   public void setEntityType(String entityType) {

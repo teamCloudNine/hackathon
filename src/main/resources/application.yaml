@@ -5,7 +5,7 @@ spring:
 aws:
   dynamodb:
     region: us-east-1
-    tableName: beneficiary-collaboration-table
+    tableName: beneficiary-collaboration-table-dp
 
 logging:
   level:
