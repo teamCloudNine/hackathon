@@ -1,5 +1,5 @@
 {
-    "beneficiary-collaboration-table-dp": [
+    "beneficiary-collaboration-table": [
       {
         "PutRequest": {
           "Item": {
@@ -55,7 +55,7 @@
             "needs": {"L": [
               {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"}
             ]},
-            "outcome": {"S": "Found Housing"},
+            "outcome": {"S": "GED"},
             "outcomeComment": {"S": "Beneficiary found a great apartment."},
             "outcomeDate": {"S": "2021-08-15T00:00:00Z"},
             "comments": {"S": "Beneficiary has a service dog."},
@@ -78,7 +78,7 @@
             "needs": {"L": [
               {"S": "need-0c8f6d7b-273b-4713-b0eb-99a5f0bfa8ae"}
             ]},
-            "outcome": {"S": "Found Education"},
+            "outcome": {"S": "GED"},
             "outcomeComment": {"S": "Beneficiary was accepted into a great program."},
             "outcomeDate": {"S": "2021-08-01T00:00:00Z"},
             "comments": {"S": "Beneficiary is a vegetarian."},
@@ -101,7 +101,7 @@
               {"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"},
               {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"}
             ]},
-            "outcome": {"S": "Found Employment"},
+            "outcome": {"S": "GED"},
             "outcomeComment": {"S": "Beneficiary got a job at a local restaurant."},
             "outcomeDate": {"S": "2021-08-01T00:00:00Z"},
             "comments": {"S": "Beneficiary is a smoker."},
