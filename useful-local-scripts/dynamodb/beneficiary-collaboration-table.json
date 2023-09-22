@@ -1,0 +1,27 @@
+{
+  "TableName": "beneficiary-collaboration-table",
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "entityKey",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "entityType",
+      "AttributeType": "S"
+    }
+  ],
+  "KeySchema": [
+    {
+      "AttributeName": "entityType",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "entityKey",
+      "KeyType": "RANGE"
+    }
+  ],
+  "ProvisionedThroughput": {
+    "ReadCapacityUnits": 5,
+    "WriteCapacityUnits": 5
+  }
+}

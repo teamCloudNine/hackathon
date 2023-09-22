@@ -1,32 +1,39 @@
 package com.hackathon.springboard.beneficiarycollaborationservice.controllers;
 
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.hackathon.springboard.beneficiarycollaborationservice.services.ActivityService;
 import com.hackathon.springboard.openapi.api.ActivitiesApi;
 import com.hackathon.springboard.openapi.model.Activity;
 import com.hackathon.springboard.openapi.model.ActivityCreationRequest;
 import com.hackathon.springboard.openapi.model.ActivityStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import lombok.AllArgsConstructor;
 
 @RestController
+@AllArgsConstructor
 public class ActivitiesController implements ActivitiesApi {
+
+  private final ActivityService activityService;
 
   @Override
   public ResponseEntity<Activity> createActivity(ActivityCreationRequest activityCreationRequest) {
-    return null;
+    return ResponseEntity.ok(activityService.createActivity(activityCreationRequest));
   }
 
   @Override
-  public ResponseEntity<Activity> findActivity(Integer id) {
-    return null;
+  public ResponseEntity<Activity> findActivity(String id) {
+    return ResponseEntity.ok(activityService.retrieveActivity(String.valueOf(id)));
   }
 
   @Override
   public ResponseEntity<List<Activity>> listActivities(
-      ActivityStatus status, Integer organizationId, Integer beneficiaryId, Integer needId
+      ActivityStatus status, String organizationId, String beneficiaryId, String needId
   ) {
-    return null;
+    return ResponseEntity.ok(activityService.retrieveAllActivities());
   }
 
 }

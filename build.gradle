@@ -12,7 +12,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.16'
 	id 'io.spring.dependency-management' version '1.1.3'
-	id 'org.openapi.generator' version '6.1.0'
+	id 'org.openapi.generator' version '6.6.0'
 }
 
 group = 'com.hackathon.springboard'
@@ -53,9 +53,11 @@ dependencies {
 	implementation 'org.openapitools:jackson-databind-nullable:0.2.4'
 	implementation 'org.mapstruct:mapstruct:1.5.3.Final'
 	implementation 'javax.annotation:javax.annotation-api:1.3.2'
+	implementation(platform("software.amazon.awssdk:bom:2.20.45"))
+    implementation("software.amazon.awssdk:dynamodb-enhanced")
 
 	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+//	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.3.Final'
@@ -68,15 +70,19 @@ tasks.named('test') {
 
 openApiGenerate {
 	generatorName = 'spring'
-	inputSpec = './open-api/springboard-service.yaml'
+	inputSpec = "$projectDir/open-api/springboard-service.yaml".toString()
 	outputDir = "$buildDir/generated".toString()
 	apiPackage = "com.hackathon.springboard.openapi.api".toString()
 	modelPackage = "com.hackathon.springboard.openapi.model".toString()
+	invokerPackage = "com.hackathon.springboard.openapi".toString()
+	ignoreFileOverride = "$rootDir/.openapi-generator-ignore".toString()
+	generateApiDocumentation = true
+	generateApiTests = false
 	configOptions = [
 	        dateLibrary: 'java8',
-			interfaceOnly: 'true',
-			skipDefaultInterface: 'true',
+			groupId: "${group}.openapi",
 			additionalModelTypeAnnotations: "@lombok.Data();@lombok.NoArgsConstructor();@lombok.AllArgsConstructor();@lombok.Builder()",
+			documentationProvider: 'springdoc',
 			useSwaggerUI: 'true'
 	]
 }
