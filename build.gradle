@@ -70,7 +70,7 @@ tasks.named('test') {
 
 openApiGenerate {
 	generatorName = 'spring'
-	inputSpec = './open-api/springboard-service.yaml'
+	inputSpec = "$projectDir/open-api/springboard-service.yaml".toString()
 	outputDir = "$buildDir/generated".toString()
 	apiPackage = "com.hackathon.springboard.openapi.api".toString()
 	modelPackage = "com.hackathon.springboard.openapi.model".toString()

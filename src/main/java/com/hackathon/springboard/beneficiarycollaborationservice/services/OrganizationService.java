@@ -1,17 +1,24 @@
 package com.hackathon.springboard.beneficiarycollaborationservice.services;
 
+import java.util.List;
+import java.util.StringJoiner;
+import java.util.UUID;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+
 import com.hackathon.springboard.beneficiarycollaborationservice.dao.OrganizationDao;
 import com.hackathon.springboard.beneficiarycollaborationservice.mappers.OrganizationMapper;
 import com.hackathon.springboard.openapi.model.Organization;
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
-import software.amazon.awssdk.enhanced.dynamodb.model.ScanEnhancedRequest;
+import com.hackathon.springboard.openapi.model.OrganizationCreationRequest;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import software.amazon.awssdk.enhanced.dynamodb.model.ScanEnhancedRequest;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class OrganizationService {
 
   private final OrganizationDao organizationDao;
@@ -27,5 +34,19 @@ public class OrganizationService {
         .map(organizationMapper::organizationEntityToOrganization)
         .collect(Collectors.toList());
   }
+
+public Organization createOrganization(OrganizationCreationRequest organization) {
+  Organization org = organizationMapper.organizationCreationRequestToOrganization(organization);
+    String generatedUUID = new StringJoiner("-")
+        .add("organization")
+        .add(UUID
+                 .randomUUID()
+                 .toString())
+        .toString();
+    org.setId(generatedUUID);
+    log.debug("Generated org UUID {}...", generatedUUID);
+    organizationDao.save(organizationMapper.organizationToOrganizationEntity(org));
+    return org;
+}
 
 }

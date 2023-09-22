@@ -5,6 +5,8 @@ spring:
 aws:
   dynamodb:
     region: us-east-1
+    end-point: http://localhost:8000
+    local: true
     tableName: beneficiary-collaboration-table
 
 logging:

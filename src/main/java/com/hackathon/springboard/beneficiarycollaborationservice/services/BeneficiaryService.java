@@ -1,17 +1,24 @@
 package com.hackathon.springboard.beneficiarycollaborationservice.services;
 
+import java.util.List;
+import java.util.StringJoiner;
+import java.util.UUID;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+
 import com.hackathon.springboard.beneficiarycollaborationservice.dao.BeneficiaryDao;
 import com.hackathon.springboard.beneficiarycollaborationservice.mappers.BeneficiaryMapper;
 import com.hackathon.springboard.openapi.model.Beneficiary;
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
-import software.amazon.awssdk.enhanced.dynamodb.model.ScanEnhancedRequest;
+import com.hackathon.springboard.openapi.model.BeneficiaryCreationRequest;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import software.amazon.awssdk.enhanced.dynamodb.model.ScanEnhancedRequest;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class BeneficiaryService {
 
   private final BeneficiaryDao beneficiaryDao;
@@ -27,6 +34,20 @@ public class BeneficiaryService {
                   .stream()
                   .map(beneficiaryMapper::beneficiaryEntityToBeneficiary)
                   .collect(Collectors.toList());
+  }
+  
+  public Beneficiary creatBeneficiary(BeneficiaryCreationRequest beneficiaryCreationRequest){
+    Beneficiary beneficiary = beneficiaryMapper.beneficiaryCreationRequestToBeneficiary(beneficiaryCreationRequest);
+    String generatedUUID = new StringJoiner("-")
+        .add("beneficiary")
+        .add(UUID
+                 .randomUUID()
+                 .toString())
+        .toString();
+    beneficiary.setId(generatedUUID);
+    log.debug("Generated beneficiary UUID {}...", generatedUUID);
+    beneficiaryDao.save(beneficiaryMapper.beneficiaryToBeneficiaryEntity(beneficiary));
+    return beneficiary;
   }
 
 }

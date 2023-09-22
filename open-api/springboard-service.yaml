@@ -85,7 +85,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Organization'
+              $ref: '#/components/schemas/OrganizationCreationRequest'
       responses:
         '201':
           description: Successfully created an organization.
@@ -364,6 +364,25 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/Need'
+    OrganizationCreationRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        streetAddress:
+          type: string
+        state:
+          type: string
+        zipcode:
+          type: string
+        phoneNumber:
+          type: string
+        description:
+          type: string
+        needs:
+          type: array
+          items:
+            type: integer
     Organization:
       type: object
       properties:
