@@ -20,7 +20,7 @@ public class OrganizationEntity {
   private String zipcode;
   private String phoneNumber;
   private String description;
-  private List<Integer> needs;
+  private List<String> needs;
 
   @DynamoDbPartitionKey
   public String getEntityType() {
