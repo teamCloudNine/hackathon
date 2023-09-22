@@ -1,0 +1,113 @@
+{
+    "beneficiary-collaboration-table-dp": [
+      {
+        "PutRequest": {
+          "Item": {
+            "entityType": {"S": "Beneficiary"},
+            "entityId": {"S": "beneficiary-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"},
+            "firstName": {"S": "John"},
+            "lastName": {"S": "Smith"},
+            "dateOfBirth": {"S": "1990-01-01T00:00:00Z"},
+            "identity": {"S": "M"},
+            "phoneNumber": {"S": "(555) 123-4567"},
+            "cabinNumber": {"N": "42"},
+            "needs": {"L": [
+              {"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"},
+              {"S": "need-0c8f6d7b-273b-4713-b0eb-99a5f0bfa8ae"},
+              {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"}
+            ]},
+            "comments": {"S": "Beneficiary has a medical condition that requires special dietary needs."},
+            "startDate": {"S": "2021-07-01T00:00:00Z"},
+            "endDate": {"S": "2021-08-31T00:00:00Z"}
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "entityType": {"S": "Beneficiary"},
+            "entityId": {"S": "beneficiary-8c3ae0d4-f06a-47d2-a8e3-24c5c6b28e9d"},
+            "firstName": {"S": "Maria"},
+            "lastName": {"S": "Garcia"},
+            "dateOfBirth": {"S": "1995-05-05T00:00:00Z"},
+            "identity": {"S": "F"},
+            "phoneNumber": {"S": "(555) 987-6543"},
+            "cabinNumber": {"N": "17"},
+            "needs": {"L": [
+              {"S": "need-1a2b3c4d-5e6f-7g8h-9i10-jk11lm12no13"}
+            ]},
+            "comments": {"S": "Beneficiary is allergic to peanuts."},
+            "startDate": {"S": "2021-07-01T00:00:00Z"}
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "entityType": {"S": "Beneficiary"},
+            "entityId": {"S": "beneficiary-3b2e1a5c-4f6d-7g8h-9i10-jk11lm12no13"},
+            "firstName": {"S": "Mohammed"},
+            "lastName": {"S": "Lee"},
+            "dateOfBirth": {"S": "1985-12-31T00:00:00Z"},
+            "identity": {"S": "M"},
+            "phoneNumber": {"S": "(555) 555-5555"},
+            "cabinNumber": {"N": "73"},
+            "needs": {"L": [
+              {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"}
+            ]},
+            "outcome": {"S": "Found Housing"},
+            "outcomeComment": {"S": "Beneficiary found a great apartment."},
+            "outcomeDate": {"S": "2021-08-15T00:00:00Z"},
+            "comments": {"S": "Beneficiary has a service dog."},
+            "startDate": {"S": "2021-07-01T00:00:00Z"},
+            "endDate": {"S": "2021-08-31T00:00:00Z"}
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "entityType": {"S": "Beneficiary"},
+            "entityId": {"S": "beneficiary-9i10jk11-lm12-no13-3b2e1a5c4f6d"},
+            "firstName": {"S": "Fatima"},
+            "lastName": {"S": "Chen"},
+            "dateOfBirth": {"S": "1988-06-15T00:00:00Z"},
+            "identity": {"S": "F"},
+            "phoneNumber": {"S": "(555) 555-1234"},
+            "cabinNumber": {"N": "12"},
+            "needs": {"L": [
+              {"S": "need-0c8f6d7b-273b-4713-b0eb-99a5f0bfa8ae"}
+            ]},
+            "outcome": {"S": "Found Education"},
+            "outcomeComment": {"S": "Beneficiary was accepted into a great program."},
+            "outcomeDate": {"S": "2021-08-01T00:00:00Z"},
+            "comments": {"S": "Beneficiary is a vegetarian."},
+            "startDate": {"S": "2021-07-01T00:00:00Z"}
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "entityType": {"S": "Beneficiary"},
+            "entityId": {"S": "beneficiary-7g8h9i10-jk11-lm12-no13-3b2e1a5c4f6d"},
+            "firstName": {"S": "Ahmed"},
+            "lastName": {"S": "Kim"},
+            "dateOfBirth": {"S": "1992-11-20T00:00:00Z"},
+            "identity": {"S": "M"},
+            "phoneNumber": {"S": "(555) 123-7890"},
+            "cabinNumber": {"N": "55"},
+            "needs": {"L": [
+              {"S": "need-e2a99b0e-9c8e-4a05-9720-59b02aee3d1f"},
+              {"S": "need-47d2e8c3-ae0d-4f06-a8e3-24c5c6b28e9d"}
+            ]},
+            "outcome": {"S": "Found Employment"},
+            "outcomeComment": {"S": "Beneficiary got a job at a local restaurant."},
+            "outcomeDate": {"S": "2021-08-01T00:00:00Z"},
+            "comments": {"S": "Beneficiary is a smoker."},
+            "startDate": {"S": "2021-07-01T00:00:00Z"}
+          }
+        }
+      }
+    ]
+  }
