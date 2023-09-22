@@ -12,7 +12,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.16'
 	id 'io.spring.dependency-management' version '1.1.3'
-	id 'org.openapi.generator' version '6.1.0'
+	id 'org.openapi.generator' version '6.6.0'
 }
 
 group = 'com.hackathon.springboard'
@@ -72,6 +72,9 @@ openApiGenerate {
 	outputDir = "$buildDir/generated".toString()
 	apiPackage = "com.hackathon.springboard.openapi.api".toString()
 	modelPackage = "com.hackathon.springboard.openapi.model".toString()
+	invokerPackage = "com.hackathon.springboard.openapi".toString()
+	ignoreFileOverride = "$rootDir/.openapi-generator-ignore".toString()
+	generateApiDocumentation = true
 	configOptions = [
 	        dateLibrary: 'java8',
 			interfaceOnly: 'true',
