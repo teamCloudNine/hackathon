@@ -96,6 +96,10 @@ public class ActivityService {
 
     String expressionStatement = "";
 
+    if (listOfExpressions.isEmpty()) {
+      expressionStatement = expression.expression();
+    }
+
     for (Expression ex : listOfExpressions) {
       expressionStatement = Expression
           .join(
