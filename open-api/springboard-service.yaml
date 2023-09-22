@@ -336,7 +336,7 @@ components:
         needs:
           type: array
           items:
-            type: integer
+            type: string
         comments:
           type: string
     Beneficiary:
@@ -362,7 +362,7 @@ components:
         needs:
           type: array
           items:
-            type: integer
+            type: string
         outcome:
           $ref: "#/components/schemas/OutcomeEvent"
         outcomeComment:
@@ -432,7 +432,7 @@ components:
         needs:
           type: array
           items:
-            type: integer
+            type: string
     Organization:
       type: object
       properties:
@@ -454,7 +454,7 @@ components:
         needs:
           type: array
           items:
-            type: integer
+            type: string
     Organizations:
       type: array
       items:
@@ -463,11 +463,11 @@ components:
       type: object
       properties:
         organizationId:
-          type: integer
+          type: string
         beneficiaryId:
-          type: integer
+          type: string
         needId:
-          type: integer
+          type: string
         startDate:
           type: string
           format: date-time
@@ -485,11 +485,11 @@ components:
           type: string
           example: act-123245asdf
         organizationId:
-          type: integer
+          type: string
         beneficiaryId:
-          type: integer
+          type: string
         needId:
-          type: integer
+          type: string
         startDate:
           type: string
           format: date-time

@@ -3,10 +3,10 @@ aws:
     region: us-east-1
     endpoint: http://localhost:8000
     local: true
-    tableName: beneficiary-collaboration-table
+    tableName: beneficiary-collaboration-table-dp
 
 logging:
   level:
     root: info
     com.hackathon.springboard: debug
-    software: trace
+    software: error

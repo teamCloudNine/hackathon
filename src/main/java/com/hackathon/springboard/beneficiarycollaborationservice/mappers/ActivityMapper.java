@@ -10,10 +10,12 @@ import org.mapstruct.Mapping;
 public interface ActivityMapper {
 
   @Mapping(source = "entityId", target = "id")
+  @Mapping(source = "activityStatus", target = "status")
   Activity activityEntityToActivity(ActivityEntity activityEntity);
 
   @Mapping(source = "id", target = "entityId")
   @Mapping(target = "entityType", constant = "Activity")
+  @Mapping(source = "status", target = "activityStatus")
   ActivityEntity activityToActivityEntity(Activity activity);
 
   Activity activityCreationRequestToActivity(ActivityCreationRequest activityCreationRequest);

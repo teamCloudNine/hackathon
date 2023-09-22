@@ -16,12 +16,9 @@ public class ActivityEntity {
 
   private String entityType; 
   private String entityId;
-
-  private Integer organizationId;
-
-  private Integer beneficiaryId;
-
-  private Integer needId;
+  private String organizationId;
+  private String beneficiaryId;
+  private String needId;
 
   @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
   private OffsetDateTime startDate;
@@ -29,7 +26,7 @@ public class ActivityEntity {
   @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
   private OffsetDateTime endDate;
 
-  private ActivityStatus status;
+  private ActivityStatus activityStatus;
 
   private String comments;
 

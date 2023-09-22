@@ -28,7 +28,7 @@ public class OrganizationsController implements OrganizationsApi {
 
   @Override
   public ResponseEntity<List<Organization>> listOrganizations(String needId) {
-    return ResponseEntity.ok(organizationService.retrieveOrganizations());
+    return ResponseEntity.ok(organizationService.retrieveOrganizations(needId));
   }
 
 }
