@@ -2,21 +2,21 @@
   "TableName": "beneficiary-collaboration-table",
   "AttributeDefinitions": [
     {
-      "AttributeName": "EntityKey",
+      "AttributeName": "entityKey",
       "AttributeType": "S"
     },
     {
-      "AttributeName": "EntityType",
+      "AttributeName": "entityType",
       "AttributeType": "S"
     }
   ],
   "KeySchema": [
     {
-      "AttributeName": "EntityType",
+      "AttributeName": "entityType",
       "KeyType": "HASH"
     },
     {
-      "AttributeName": "EntityKey",
+      "AttributeName": "entityKey",
       "KeyType": "RANGE"
     }
   ],

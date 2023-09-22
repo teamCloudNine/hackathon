@@ -1,3 +1,12 @@
+spring:
+  application:
+    name: beneficiary-collab-service
+
+aws:
+  dynamodb:
+    region: us-east-1
+    tableName: beneficiary-collaboration-table
+
 logging:
   level:
     root: info
