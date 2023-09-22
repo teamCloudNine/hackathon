@@ -6,11 +6,11 @@ info:
     collaboration between organizations and the beneficiaries supported by them.
   version: 1.0.0
 servers:
-  - url: 'https://pttmuyg4gp.us-east-1.awsapprunner.com'
+  - url: "https://pttmuyg4gp.us-east-1.awsapprunner.com"
     description: Main deployed environment
-  - url: 'https://tpztctibrc.us-east-1.awsapprunner.com'
+  - url: "https://tpztctibrc.us-east-1.awsapprunner.com"
     description: Amit's environment
-  - url: 'https://fw22knfxhnc.us-east-1.awsapprunner.com'
+  - url: "https://fw22knfxhnc.us-east-1.awsapprunner.com"
     description: Daniel's environment
 paths:
   /beneficiaries:
@@ -27,14 +27,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/BeneficiaryCreationRequest'
+              $ref: "#/components/schemas/BeneficiaryCreationRequest"
       responses:
-        '201':
+        "201":
           description: Successfully created a beneficiary.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Beneficiary'
+                $ref: "#/components/schemas/Beneficiary"
     get:
       tags:
         - beneficiary
@@ -43,12 +43,12 @@ paths:
         Retrieve a list of beneficiaries currently tracked.
       operationId: listBeneficiaries
       responses:
-        '200':
+        "200":
           description: Successfully retrieved list of beneficiaries.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Beneficiaries'
+                $ref: "#/components/schemas/Beneficiaries"
   /beneficiaries/{id}:
     parameters:
       - name: id
@@ -65,12 +65,41 @@ paths:
         Retrieve a beneficiary based on id.
       operationId: findBeneficiary
       responses:
-        '200':
+        "200":
           description: Successfully retrieved a beneficiary.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Beneficiary'
+                $ref: "#/components/schemas/Beneficiary"
+  /beneficiaries/{id}/outcomes:
+    parameters:
+      - name: id
+        in: path
+        description: Beneficiary identifier
+        required: true
+        schema:
+          type: string
+    post:
+      tags:
+        - beneficiary
+      summary: Create a Beneficiary's outcome.
+      description: |
+        Create a beneficiary's outcome.
+      operationId: createBeneficiaryOutcome
+      requestBody:
+        description: Outcome to create.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Outcome"
+      responses:
+        "201":
+          description: Successfully added a beneficiary outcome.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Beneficiary"
   /organizations:
     post:
       tags:
@@ -85,14 +114,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OrganizationCreationRequest'
+              $ref: "#/components/schemas/OrganizationCreationRequest"
       responses:
-        '201':
+        "201":
           description: Successfully created an organization.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Organization'
+                $ref: "#/components/schemas/Organization"
     get:
       parameters:
         - name: needId
@@ -108,12 +137,12 @@ paths:
         Retrieve a list of organizations currently tracked.
       operationId: listOrganizations
       responses:
-        '200':
+        "200":
           description: Successfully retrieved list of organizations.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Organizations'
+                $ref: "#/components/schemas/Organizations"
   /organizations/{id}:
     parameters:
       - name: id
@@ -130,12 +159,12 @@ paths:
         Retrieve an organization based on id.
       operationId: findOrganization
       responses:
-        '200':
+        "200":
           description: Successfully retrieved an organization.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Organization'
+                $ref: "#/components/schemas/Organization"
   /needs:
     post:
       tags:
@@ -150,14 +179,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/NeedCreationRequest'
+              $ref: "#/components/schemas/NeedCreationRequest"
       responses:
-        '201':
+        "201":
           description: Successfully created a need.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Need'
+                $ref: "#/components/schemas/Need"
     get:
       tags:
         - need
@@ -166,12 +195,12 @@ paths:
         Retrieve a list of needs currently tracked.
       operationId: listNeeds
       responses:
-        '200':
+        "200":
           description: Successfully retrieved list of needs.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Needs'
+                $ref: "#/components/schemas/Needs"
   /needs/{id}:
     parameters:
       - name: id
@@ -188,12 +217,12 @@ paths:
         Retrieve a need based on id.
       operationId: findNeed
       responses:
-        '200':
+        "200":
           description: Successfully retrieved a need.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Need'
+                $ref: "#/components/schemas/Need"
   /activities:
     post:
       tags:
@@ -208,14 +237,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ActivityCreationRequest'
+              $ref: "#/components/schemas/ActivityCreationRequest"
       responses:
-        '201':
+        "201":
           description: Successfully created an activity.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Activity'
+                $ref: "#/components/schemas/Activity"
     get:
       parameters:
         - name: status
@@ -223,20 +252,20 @@ paths:
           description: Activity status
           required: false
           schema:
-            $ref: '#/components/schemas/ActivityStatus'
+            $ref: "#/components/schemas/ActivityStatus"
         - name: organizationId
           in: query
           description: Organization identifier
           required: false
           schema:
             type: string
-        - name: beneficiaryId 
+        - name: beneficiaryId
           in: query
           description: Beneficiary identifier
           required: false
           schema:
             type: string
-        - name: needId 
+        - name: needId
           in: query
           description: Need identifier
           required: false
@@ -249,12 +278,12 @@ paths:
         Retrieve a list of all activities currently tracked.
       operationId: listActivities
       responses:
-        '200':
+        "200":
           description: Successfully retrieved list of activities.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Activities'
+                $ref: "#/components/schemas/Activities"
   /activities/{id}:
     parameters:
       - name: id
@@ -271,12 +300,12 @@ paths:
         Retrieve an activity based on id.
       operationId: findActivity
       responses:
-        '200':
+        "200":
           description: Successfully retrieved an activity.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Activity'
+                $ref: "#/components/schemas/Activity"
 components:
   schemas:
     BeneficiaryCreationRequest:
@@ -326,8 +355,8 @@ components:
           type: array
           items:
             type: integer
-        outcome:
-          $ref: '#/components/schemas/Outcome'
+        outcomes:
+          $ref: "#/components/schemas/Outcomes"
         startDate:
           type: string
           format: date-time
@@ -339,14 +368,14 @@ components:
     Beneficiaries:
       type: array
       items:
-        $ref: '#/components/schemas/Beneficiary'
+        $ref: "#/components/schemas/Beneficiary"
     BeneficiaryNeed:
       type: object
       properties:
         need:
-          $ref: '#/components/schemas/Need'
+          $ref: "#/components/schemas/Need"
         organization:
-          $ref: '#/components/schemas/Organization'
+          $ref: "#/components/schemas/Organization"
     NeedCreationRequest:
       type: object
       properties:
@@ -371,7 +400,7 @@ components:
     Needs:
       type: array
       items:
-        $ref: '#/components/schemas/Need'
+        $ref: "#/components/schemas/Need"
     OrganizationCreationRequest:
       type: object
       properties:
@@ -416,7 +445,7 @@ components:
     Organizations:
       type: array
       items:
-        $ref: '#/components/schemas/Organization'
+        $ref: "#/components/schemas/Organization"
     ActivityCreationRequest:
       type: object
       properties:
@@ -433,7 +462,7 @@ components:
           type: string
           format: date-time
         status:
-          $ref: '#/components/schemas/ActivityStatus'
+          $ref: "#/components/schemas/ActivityStatus"
         comments:
           type: string
     Activity:
@@ -455,21 +484,43 @@ components:
           type: string
           format: date-time
         status:
-          $ref: '#/components/schemas/ActivityStatus'
+          $ref: "#/components/schemas/ActivityStatus"
         comments:
-          type: string  
+          type: string
     Activities:
       type: array
       items:
-        $ref: '#/components/schemas/Activity'    
+        $ref: "#/components/schemas/Activity"
     ActivityStatus:
       type: string
       enum: [IN_PROGRESS, COMPLETED]
+    OutcomeEvent:
+      type: string
+      enum:
+        [
+          Found Permanent Housing,
+          Incarcerated,
+          Deceased,
+          Assertive Community,
+          Long-term Substance Abuse Treatment,
+          Rule Violations,
+          Bank Account Opened,
+          GED,
+          Found Emplovment,
+          Training Program,
+          Other,
+        ]
     Outcome:
       type: object
       properties:
-        eventName:
-          type: string
+        name:
+          $ref: "#/components/schemas/OutcomeEvent"
         date:
           type: string
           format: date-time
+        comments:
+          type: string
+    Outcomes:
+      type: array
+      items:
+        $ref: "#/components/schemas/Outcome"
