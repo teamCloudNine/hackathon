@@ -29,6 +29,8 @@ public class BeneficiaryEntity {
   private String outcomeComment;
   private OffsetDateTime outcomeDate;
   private String comments;
+  private OffsetDateTime startDate;
+  private OffsetDateTime endDate;
 
   @DynamoDbPartitionKey
   public String getEntityType() {

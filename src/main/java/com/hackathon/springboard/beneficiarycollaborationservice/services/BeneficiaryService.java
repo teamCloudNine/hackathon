@@ -1,13 +1,16 @@
 package com.hackathon.springboard.beneficiarycollaborationservice.services;
 
 import java.time.OffsetDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.StringJoiner;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import com.hackathon.springboard.beneficiarycollaborationservice.constants.EntityConstants;
 import com.hackathon.springboard.beneficiarycollaborationservice.dao.BeneficiaryDao;
 import com.hackathon.springboard.beneficiarycollaborationservice.mappers.BeneficiaryMapper;
 import com.hackathon.springboard.openapi.model.Beneficiary;
@@ -18,6 +21,7 @@ import com.hackathon.springboard.openapi.model.OutcomeEvent;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import software.amazon.awssdk.enhanced.dynamodb.model.ScanEnhancedRequest;
+import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
 
 @Service
 @AllArgsConstructor
@@ -32,6 +36,12 @@ public class BeneficiaryService {
   }
 
   public List<Beneficiary> retrieveAllBeneficiaries() {
+    Map<String, AttributeValue> expressionValues = new HashMap<>();
+    expressionValues
+        .put(":val", AttributeValue
+            .builder()
+            .s(EntityConstants.BENEFICIARY_ENTITY_TYPE)
+            .build());
     return beneficiaryDao.retrieveList(ScanEnhancedRequest
         .builder().build())
         .stream()
