@@ -4,10 +4,11 @@ import com.hackathon.springboard.openapi.api.OrganizationsApi;
 import com.hackathon.springboard.openapi.model.Organization;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class OrganizationsController implements OrganizationsApi {
 
   @Override
