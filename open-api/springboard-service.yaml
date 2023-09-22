@@ -92,15 +92,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                outcomeEvent:
-                  $ref: "#/components/schemas/OutcomeEvent"
-                outcomeComment:
-                  type: string
-                outcomeDate:
-                  type: string
-                  format: date-time
+              $ref: "#/components/schemas/CreateBeneficiaryOutcomeRequest"
       responses:
         "201":
           description: Successfully added a beneficiary outcome.
@@ -523,3 +515,13 @@ components:
           Training Program,
           Other,
         ]
+    CreateBeneficiaryOutcomeRequest:
+        type: object
+        properties:
+          outcomeEvent:
+            $ref: "#/components/schemas/OutcomeEvent"
+          outcomeComment:
+            type: string
+          outcomeDate:
+            type: string
+            format: date-time
