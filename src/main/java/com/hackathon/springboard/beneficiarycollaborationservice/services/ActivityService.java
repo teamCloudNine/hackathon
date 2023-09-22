@@ -90,7 +90,7 @@ public class ActivityService {
               .build());
       listOfExpressions.add(Expression
                                 .builder()
-                                .expression("needId = " + needKey)
+                                .expression("contains(needs, " + needKey + ")")
                                 .build());
     }
 
