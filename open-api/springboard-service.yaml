@@ -1,12 +1,17 @@
 openapi: 3.0.3
 info:
   title: People in Need - Springboard Service
-  description: |- 
+  description: |-
     This backend is meant to be a simple CRUD service for supporting 
     collaboration between organizations and the beneficiaries supported by them.
   version: 1.0.0
 servers:
-  - url: 'https'
+  - url: 'https://pttmuyg4gp.us-east-1.awsapprunner.com'
+    description: Main deployed environment
+  - url: 'https://tpztctibrc.us-east-1.awsapprunner.com'
+    description: Amit's environment
+  - url: 'https://fw22knfxhnc.us-east-1.awsapprunner.com'
+    description: Daniel's environment
 paths:
   /beneficiaries:
     post:
