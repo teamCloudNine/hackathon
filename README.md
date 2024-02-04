@@ -2,7 +2,19 @@
 
 ## Summary
 
-TBD
+This service is a simple java service that is built using Spring Boot. The state is supported by a single DynamoDb table.
+
+This is accomplished using a table model described [here](https://aws.amazon.com/blogs/compute/creating-a-single-table-design-with-amazon-dynamodb).
+
+### Endpoints exposed
+
+You can find the endpoints exposed by viewing the open api specification. This is under the top level folder of `open-api`.
+
+If you want to view it through a graphical user interface. There are a few options for you:
+
+1. [Intellij Plugin - OpenAPI ​(Swagger)​ Editor](https://plugins.jetbrains.com/plugin/14837-openapi-swagger-editor)
+2. [Visual Studio Code Extension - Swagger Viewer](https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi)
+3. [Browser option - OpenAPI GUI](https://mermade.github.io/openapi-gui/)
 
 ## Quick Get Started Guide
 
@@ -46,11 +58,11 @@ associated with).
 
 #### Resulting DynamoDb record
 
-![Swagger Need Post Call](./screenshots/SingleDynamoDbTable.png)
+![Data inserted into DynamoDb Table](./screenshots/SingleDynamoDbTable.png)
 
 ### Local Development
 
-If you want to setup your table, we recommend downloading the docker container for local DynamoDb. This will allow
+If you want to set up your table, we recommend downloading the docker container for local DynamoDb. This will allow
 you to test out your service locally.
 
 To download it and start running it, you will use the following commands:
