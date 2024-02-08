@@ -1,138 +1,48 @@
-# Beneficiary Collaboration - Spring Board Service
+<div align="center">
+   <h3 align="center">Beneficiary Collaboration - Spring Board Service</h3>
+
+  <p align="center">
+    A REST API service to support the <br />Beneficiary Collaboration frontend.
+  </p>
+
+  <p align="center">
+    <img src="https://img.shields.io/github/contributors/teamCloudNine/hackathon" />
+    <img src="https://img.shields.io/github/stars/teamCloudNine/hackathon" />
+    <img src="https://img.shields.io/github/license/teamCloudNine/hackathon?label=license" />
+
+  </p>
+</div>
 
 ## Summary
 
-This service is a simple java service that is built using Spring Boot. The state is supported by a single DynamoDb table.
+A simple Spring Boot Java Rest service that writes to a single DynamoDb table to store the state related to the beneficiary collaboration service.
 
-This is accomplished using a table model described [here](https://aws.amazon.com/blogs/compute/creating-a-single-table-design-with-amazon-dynamodb).
+The state has been implemented using a nosql single table model. Please refer to the model described [here](https://aws.amazon.com/blogs/compute/creating-a-single-table-design-with-amazon-dynamodb).
 
-### Endpoints exposed
+- [Frontend - teamCloudNine/hackathon-ui](https://github.com/teamCloudNine/hackathon-ui)
 
-You can find the endpoints exposed by viewing the open api specification. This is under the top level folder of `open-api`.
+## Contributing
 
-If you want to view it through a graphical user interface. There are a few options for you:
+To contribute, here are a couple of guides separated out to make this README more readable:
 
-1. [Intellij Plugin - OpenAPI ​(Swagger)​ Editor](https://plugins.jetbrains.com/plugin/14837-openapi-swagger-editor)
-2. [Visual Studio Code Extension - Swagger Viewer](https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi)
-3. [Browser option - OpenAPI GUI](https://mermade.github.io/openapi-gui/)
+- Check [here](./docs/DEVELOPER-README.md) for more information regarding the project setup and how to developer.
+- Check [here](./docs/HELP.md) for more information on links used while developing this project.
 
-## Quick Get Started Guide
+When pushing changes to the code base, please make sure to perform the following:
 
-To help anyone get starting running the minute they start this project!
+1. Raise an issue regarding the feature enhancement or bug fix. This will allow for a discussion to take place and to hash out options. Please make sure to use the appropriate issue type as well.
+2. Ensure the any new code is covered by tests. This is to ensure that the code is stable and that it is maintainable.
+3. Raise a PR and have at least one of the original contributors to provide feedback.
 
-1. Setup Java. We are currently using Java 11
-    - You can download it from here - https://www.oracle.com/java/technologies/downloads/
-    - Please follow the guides for installation
-2. Build your project. You can use the `.gradlew clean build` for mac and `.gradlew.bat clean build` for windows
-3. Finally, run your java jar either locally using `java -jar <path-to-jar (most likely under build directory)>` or set
-   it up in Intellij or Visual Studio code.
+## License
 
-For connection to aws, we are only using DynamoDb. You can use this
-guide [Setup Local AWS Credentials](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html)
+This project is distributed under the Apache-2.0 license. See <a href="./LICENSE.md"><code>LICENSE.md</code></a> for more information.
 
-### Environments
 
-| Environment | Properties                                    |
-|-------------|-----------------------------------------------|
-| local       | tableName: beneficiary-collaboration-table-dp |
-| default     | tableName: beneficiary-collaboration-table    |
+## Contact
 
-If you need to update the table name that you use, replace the value of the tableName property.
+If you have a query or require support with this project, [raise an issue](https://github.com/teamCloudNine/hackathon/issues).
 
-This is a guide to swapping between Spring profiles and leveraging it - [Spring Profiles](https://www.baeldung.com/spring-profiles)
+Otherwise, please reach out to the maintainers of this project:
 
-## DynamoDb Table Setup
-
-We are following a single table model. What that means is that all of our data is stored in a single DynamoDb table.
-
-This allows us to optimize our persistence layer.
-
-We define the PK to be the name of our object, i.e. Beneficiary then we have a sort key that would be the unique
-identifier of the object,
-then we will have a `EntityData` attribute that will provide dynamic data (this will depend on the object it is
-associated with).
-
-#### Post call to create a Need
-
-![Swagger Need Post Call](./screenshots/Swagger-Need-Post.png)
-
-#### Resulting DynamoDb record
-
-![Data inserted into DynamoDb Table](./screenshots/SingleDynamoDbTable.png)
-
-### Local Development
-
-If you want to set up your table, we recommend downloading the docker container for local DynamoDb. This will allow
-you to test out your service locally.
-
-To download it and start running it, you will use the following commands:
-
-```bash
-docker pull amazon/dynamodb-local
-docker run -p 8000:8000 amazon/dynamodb-local
-```
-
-Then you can create the table using this script. Which is also located under /useful-local-scripts/setup.table.sh
-
-```bash
-"#!/bin/bash"
-
-echo "Setting up your dynamodb table..."
-
-aws dynamodb create-table --cli-input-json file://./dynamodb/beneficiary-collaboration-table.json --endpoint-url http://localhost:8000
-
-echo "Done!"
-```
-
-### Describe Table Output
-
-#### Command
-
-```bash
-aws dynamodb describe-table --table-name beneficary-collaboration-table
-```
-
-#### Output
-
-```json 
-{
-  "Table": {
-    "AttributeDefinitions": [
-      {
-        "AttributeName": "EntityKey",
-        "AttributeType": "S"
-      },
-      {
-        "AttributeName": "EntityType",
-        "AttributeType": "S"
-      }
-    ],
-    "TableName": "beneficary-collaboration-table",
-    "KeySchema": [
-      {
-        "AttributeName": "EntityType",
-        "KeyType": "HASH"
-      },
-      {
-        "AttributeName": "EntityKey",
-        "KeyType": "RANGE"
-      }
-    ],
-    "TableStatus": "ACTIVE",
-    "CreationDateTime": "2023-09-21T21:19:37.894000-05:00",
-    "ProvisionedThroughput": {
-      "LastDecreaseDateTime": "2023-09-21T21:28:57.505000-05:00",
-      "NumberOfDecreasesToday": 2,
-      "ReadCapacityUnits": 1,
-      "WriteCapacityUnits": 1
-    },
-    "TableSizeBytes": 0,
-    "ItemCount": 0,
-    "TableArn": "arn:aws:dynamodb:us-east-1:416539513472:table/beneficary-collaboration-table",
-    "TableId": "83fd4717-df34-4a81-a29b-95c029d1dd99",
-    "TableClassSummary": {
-      "TableClass": "STANDARD"
-    }
-  }
-}
-```
+- Daniel Poss - [Poss111](https://github.com/Poss111) - rixxroid@gmail.com
