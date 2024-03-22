@@ -121,7 +121,7 @@ aws dynamodb describe-table --table-name beneficary-collaboration-table
     },
     "TableSizeBytes": 0,
     "ItemCount": 0,
-    "TableArn": "arn:aws:dynamodb:us-east-1:416539513472:table/beneficary-collaboration-table",
+    "TableArn": "arn:aws:dynamodb:${region}:${AWSAccountId}:table/beneficary-collaboration-table",
     "TableId": "83fd4717-df34-4a81-a29b-95c029d1dd99",
     "TableClassSummary": {
       "TableClass": "STANDARD"
